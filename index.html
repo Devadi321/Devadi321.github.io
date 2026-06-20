@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adithya Krishnan | Portfolio</title>
+    <title>Adithya Krishnan K L | Python & Full-Stack Developer</title>
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -14,14 +14,14 @@
             --text-secondary: #a0a0c0;
             --text-muted: #6a6a8a;
             --accent: #00d4aa;
-            --accent-glow: rgba(0, 212, 170, 0.15);
+            --accent-glow: rgba(0,212,170,0.15);
             --accent-secondary: #7c5cfc;
             --border: #2a2a4a;
             --gradient-1: linear-gradient(135deg, #00d4aa 0%, #7c5cfc 100%);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow: 0 8px 32px rgba(0,0,0,0.3);
             --radius: 12px;
             --radius-lg: 20px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
         }
         html { scroll-behavior: smooth; scroll-padding-top: 80px; }
         body {
@@ -47,8 +47,6 @@
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
         @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:0.8} }
         @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-        @keyframes typing { from{width:0} to{width:100%} }
-        @keyframes blink { 50%{border-color:transparent} }
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
@@ -124,12 +122,6 @@
             background-clip: text; background-size: 200% 200%; animation: gradientShift 4s ease infinite;
         }
         .hero-tagline { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 12px; }
-        .hero-tagline .typewriter {
-            display: inline; overflow: hidden; white-space: nowrap;
-            border-right: 2px solid var(--accent);
-            animation: typing 3s steps(30) 1s forwards, blink 0.8s step-end infinite;
-            width: 0; max-width: fit-content;
-        }
         .hero-description { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; margin: 20px 0 36px; line-height: 1.8; }
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
         .btn {
@@ -161,11 +153,16 @@
         .about-details { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
         .about-detail-item { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.9rem; }
         .about-detail-item .icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1rem; flex-shrink: 0; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin-top: 40px; }
-        .skill-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 16px; text-align: center; transition: var(--transition); cursor: default; }
+        .skills-grid { margin-top: 40px; }
+        .skill-category { margin-bottom: 40px; }
+        .skill-category h3 { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 16px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+        .skill-items { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px;
+            padding: 10px 20px; text-align: center; transition: var(--transition); cursor: default;
+        }
         .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,212,170,0.08); }
-        .skill-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-        .skill-name { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+        .skill-name { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 40px; }
         .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; transition: var(--transition); position: relative; overflow: hidden; }
         .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-1); opacity: 0; transition: var(--transition); }
@@ -179,6 +176,16 @@
         .project-links { display: flex; gap: 16px; }
         .project-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; transition: var(--transition); }
         .project-links a:hover { color: var(--accent); }
+        .experience-grid { margin-top: 40px; display: grid; gap: 20px; }
+        .experience-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; transition: var(--transition);
+        }
+        .experience-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .experience-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
+        .experience-card .exp-period { color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 10px; display: block; }
+        .experience-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .experience-card ul { margin-top: 10px; padding-left: 20px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; }
         .contact-content { text-align: center; max-width: 600px; margin: 0 auto; }
         .contact-content .section-subtitle { margin: 0 auto 40px; }
         .contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -190,6 +197,25 @@
         .contact-email a:hover { text-decoration: underline; }
         .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
         .footer span { color: var(--accent); }
+        /* Section visibility toggle bar */
+        .section-toggle-bar {
+            display: flex; align-items: center; gap: 10px;
+            justify-content: center; flex-wrap: wrap;
+            padding: 12px 20px; margin-top: -20px; margin-bottom: 40px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); max-width: fit-content;
+            margin-left: auto; margin-right: auto;
+        }
+        .toggle-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
+        .toggle-btn {
+            padding: 6px 16px; border-radius: 50px; font-size: 0.82rem;
+            font-weight: 500; cursor: pointer; transition: var(--transition);
+            border: 1px solid var(--border); background: transparent;
+            color: var(--text-secondary); font-family: inherit;
+        }
+        .toggle-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+        .toggle-btn.active { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+        .section.hidden { display: none; }
         @media (max-width: 968px) {
             .hero h1 { font-size: 3rem; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -208,12 +234,12 @@
             .hamburger { display: flex; z-index: 1000; }
             .hero h1 { font-size: 2.4rem; }
             .hero-tagline { font-size: 1.1rem; }
-            .hero-tagline .typewriter { white-space: normal; border-right: none; animation: none; width: auto; }
             .hero-actions { flex-direction: column; }
             .hero-actions .btn { width: 100%; justify-content: center; }
             .hero-stats { gap: 24px; flex-wrap: wrap; }
             .section { padding: 60px 0; }
-            .skills-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
+            .skill-items { gap: 8px; }
+            .skill-card { padding: 8px 14px; font-size: 0.85rem; }
             .about-details { grid-template-columns: 1fr; }
             .about-image-placeholder { width: 240px; height: 240px; }
             .about-image-placeholder span { font-size: 3.5rem; }
@@ -229,7 +255,9 @@
     </style>
 </head>
 <body>
+
     <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">A<span>K</span></a>
@@ -237,6 +265,7 @@
                 <li><a href="#about" onclick="closeMenu()">About</a></li>
                 <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
                 <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
                 <li><a href="#contact" onclick="closeMenu()" class="nav-cta">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -244,49 +273,52 @@
             </button>
         </div>
     </nav>
+
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-badge reveal visible">
-                <span class="hero-badge-dot"></span> BCA Student & Developer
+                <span class="hero-badge-dot"></span> BCA Student | Python &amp; Full-Stack Developer
             </div>
-            <h1 class="reveal visible reveal-delay-1">Hi, I'm <span class="highlight">Adithya</span></h1>
-            <p class="hero-tagline reveal visible reveal-delay-2">I build <span class="typewriter">things for the web.</span></p>
+            <h1 class="reveal visible reveal-delay-1">Hi, I'm <span class="highlight">Adithya Krishnan K L</span></h1>
+            <p class="hero-tagline reveal visible reveal-delay-2">Python &amp; Full-Stack Developer from Kerala</p>
             <p class="hero-description reveal visible reveal-delay-2">
-                A passionate BCA student with a keen interest in frontend development, AI/ML, and cybersecurity.
-                I love turning ideas into clean, responsive, and user-friendly web experiences.
+                Python and full-stack developer focused on automation, APIs, dashboards, and AI workflows.
+                I build tools that save time and solve real problems.
             </p>
             <div class="hero-actions reveal visible reveal-delay-3">
-                <a href="#projects" class="btn btn-primary">View My Work ↓</a>
+                <a href="#projects" class="btn btn-primary">View My Work &darr;</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
             <div class="hero-stats reveal visible reveal-delay-4">
-                <div class="hero-stat"><h3>3<span>+</span></h3><p>Years of Investing</p></div>
-                <div class="hero-stat"><h3>2<span>+</span></h3><p>Years of Coding</p></div>
+                <div class="hero-stat"><h3>5<span>+</span></h3><p>Projects Built</p></div>
+                <div class="hero-stat"><h3>3<span>+</span></h3><p>Freelance Roles</p></div>
                 <div class="hero-stat"><h3>∞</h3><p>Curiosity</p></div>
             </div>
         </div>
     </section>
+
     <section class="section" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
                     <p class="section-label reveal">About Me</p>
-                    <h3 class="reveal reveal-delay-1">Turning ideas into code, one project at a time</h3>
+                    <h3 class="reveal reveal-delay-1">Python &amp; full-stack developer building AI, automation, and web products</h3>
                     <p class="reveal reveal-delay-2">
-                        I'm a BCA Second Year student passionate about web development and technology.
-                        My journey started with curiosity about how websites work, and now I'm building
-                        my own — from simple landing pages to interactive web applications.
+                        I'm a BCA student at SB College, Changanassery, Kerala with a deep passion for 
+                        Python development, automation, and AI. I specialize in building tools that 
+                        automate workflows, process data, and deliver real business value.
                     </p>
                     <p class="reveal reveal-delay-2">
-                        When I'm not coding, I'm exploring financial markets — I've been investing in
-                        mutual funds for over 3 years and learning swing trading. I believe in building
-                        things that are both functional and beautiful.
+                        From scraping business websites for lead generation to building AI video caption 
+                        generators and status dashboards — I enjoy the full cycle of taking an idea from 
+                        concept to deployment. I also work as a freelance AI Data Trainer and Website 
+                        Tester, where I sharpen my eye for quality and detail.
                     </p>
                     <div class="about-details reveal reveal-delay-3">
-                        <div class="about-detail-item"><div class="icon">🎓</div><span>BCA Second Year</span></div>
-                        <div class="about-detail-item"><div class="icon">📍</div><span>Kerala, India</span></div>
-                        <div class="about-detail-item"><div class="icon">💻</div><span>Frontend Focus</span></div>
-                        <div class="about-detail-item"><div class="icon">📈</div><span>Investor since '23</span></div>
+                        <div class="about-detail-item"><div class="icon">&#127891;</div><span>BCA at SB College</span></div>
+                        <div class="about-detail-item"><div class="icon">&#128205;</div><span>Kerala, India</span></div>
+                        <div class="about-detail-item"><div class="icon">&#128187;</div><span>Python, Full-Stack</span></div>
+                        <div class="about-detail-item"><div class="icon">&#129302;</div><span>AI &amp; Automation</span></div>
                     </div>
                 </div>
                 <div class="about-image-wrapper" style="display:flex;justify-content:center;">
@@ -297,33 +329,335 @@
             </div>
         </div>
     </section>
+
     <section class="section" id="skills" style="background:var(--bg-secondary)">
         <div class="container">
             <p class="section-label reveal">Skills</p>
             <h2 class="section-title reveal reveal-delay-1">My Toolbox</h2>
-            <p class="section-subtitle reveal reveal-delay-2">Technologies and tools I work with to bring ideas to life.</p>
+            <p class="section-subtitle reveal reveal-delay-2">Technologies, languages, and tools I work with.</p>
             <div class="skills-grid">
-                <div class="skill-card reveal reveal-delay-1"><span class="skill-icon">🐍</span><p class="skill-name">Python</p></div>
-                <div class="skill-card reveal reveal-delay-1"><span class="skill-icon">☕</span><p class="skill-name">Java</p></div>
-                <div class="skill-card reveal reveal-delay-2"><span class="skill-icon">🌐</span><p class="skill-name">HTML/CSS</p></div>
-                <div class="skill-card reveal reveal-delay-2"><span class="skill-icon">🗄️</span><p class="skill-name">SQL</p></div>
-                <div class="skill-card reveal reveal-delay-3"><span class="skill-icon">⚛️</span><p class="skill-name">React</p></div>
-                <div class="skill-card reveal reveal-delay-3"><span class="skill-icon">🔧</span><p class="skill-name">Git & GitHub</p></div>
-                <div class="skill-card reveal reveal-delay-4"><span class="skill-icon">📱</span><p class="skill-name">Responsive Design</p></div>
-                <div class="skill-card reveal reveal-delay-4"><span class="skill-icon">🤖</span><p class="skill-name">AI/ML Basics</p></div>
+                <div class="skill-category reveal reveal-delay-1">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-card"><span class="skill-name">Python</span></div>
+                        <div class="skill-card"><span class="skill-name">JavaScript</span></div>
+                        <div class="skill-card"><span class="skill-name">TypeScript</span></div>
+                        <div class="skill-card"><span class="skill-name">SQL</span></div>
+                        <div class="skill-card"><span class="skill-name">Java</span></div>
+                        <div class="skill-card"><span class="skill-name">C</span></div>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-2">
+                    <h3>Frameworks &amp; Libraries</h3>
+                    <div class="skill-items">
+                        <div class="skill-card"><span class="skill-name">Next.js</span></div>
+                        <div class="skill-card"><span class="skill-name">React</span></div>
+                        <div class="skill-card"><span class="skill-name">Flask</span></div>
+                        <div class="skill-card"><span class="skill-name">FastAPI</span></div>
+                        <div class="skill-card"><span class="skill-name">Tailwind CSS</span></div>
+                        <div class="skill-card"><span class="skill-name">Playwright</span></div>
+                        <div class="skill-card"><span class="skill-name">Web3.py</span></div>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-3">
+                    <h3>Tools &amp; Platforms</h3>
+                    <div class="skill-items">
+                        <div class="skill-card"><span class="skill-name">Git</span></div>
+                        <div class="skill-card"><span class="skill-name">Docker</span></div>
+                        <div class="skill-card"><span class="skill-name">Linux</span></div>
+                        <div class="skill-card"><span class="skill-name">OpenAI API</span></div>
+                        <div class="skill-card"><span class="skill-name">HuggingFace</span></div>
+                        <div class="skill-card"><span class="skill-name">SQLite</span></div>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-4">
+                    <h3>Strengths</h3>
+                    <div class="skill-items">
+                        <div class="skill-card"><span class="skill-name">Web Scraping</span></div>
+                        <div class="skill-card"><span class="skill-name">Automation</span></div>
+                        <div class="skill-card"><span class="skill-name">API Development</span></div>
+                        <div class="skill-card"><span class="skill-name">Prompt Engineering</span></div>
+                        <div class="skill-card"><span class="skill-name">Data Annotation</span></div>
+                        <div class="skill-card"><span class="skill-name">QA Testing</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     <section class="section" id="projects">
         <div class="container">
             <p class="section-label reveal">Projects</p>
             <h2 class="section-title reveal reveal-delay-1">Things I've Built</h2>
-            <p class="section-subtitle reveal reveal-delay-2">A collection of projects that reflect my learning journey and passion for development.</p>
+            <p class="section-subtitle reveal reveal-delay-2">Real projects I've designed, built, and deployed.</p>
             <div class="projects-grid">
                 <div class="project-card reveal reveal-delay-1">
-                    <div class="project-icon">🖥️</div>
-                    <h3>Personal Portfolio</h3>
-                    <p>A modern, responsive personal portfolio website built from scratch using HTML, CSS, and JavaScript. Features smooth animations, dark theme, and clean mobile-first design.</p>
-                    <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">JavaScript</span><span class="project-tag">Responsive</span></div>
-                    <div class="project-links"><a href="https://github.com/Devadi321" target="_blank">🔗 GitHub</a></div>
+                    <div class="project-icon">&#128269;</div>
+                    <h3>AI Client Outreach &amp; Lead Scraper</h3>
+                    <p>Automated lead generation pipeline that scrapes business websites for contact details, generates personalized cold emails, and sends them from one workflow. Processes 50+ websites per hour.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Playwright</span>
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">OpenAI API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Devadi321" target="_blank">&#128279; GitHub</a>
+                    </div>
                 </div>
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-icon">&#127916;</div>
+                    <h3>CaptionBeast</h3>
+                    <p>AI video caption generator that automatically transcribes and captions videos using Whisper. Built with a FastAPI backend and Docker for easy deployment.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">Whisper</span>
+                        <span class="project-tag">MoviePy</span>
+                        <span class="project-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Devadi321" target="_blank">&#128279; GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-3">
+                    <div class="project-icon">&#128200;</div>
+                    <h3>Uptime Guard</h3>
+                    <p>Self-hosted system status dashboard that monitors and displays the health of your services in real-time. Built with a modern stack for reliability.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Next.js 14</span>
+                        <span class="project-tag">TypeScript</span>
+                        <span class="project-tag">Tailwind</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Devadi321" target="_blank">&#128279; GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="project-icon">&#127760;</div>
+                    <h3>Landify</h3>
+                    <p>No-code SaaS landing page builder that lets you create beautiful, responsive landing pages without writing code. Drag-and-drop simplicity meets modern design.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Next.js 14</span>
+                        <span class="project-tag">TypeScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Devadi321" target="_blank">&#128279; GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-icon">&#127970;</div>
+                    <h3>Tuition Centre Website</h3>
+                    <p>Responsive client website built in 2 days for a local tuition centre. Clean, professional design with information about courses, faculty, and contact details.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Devadi321" target="_blank">&#128279; GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="experience" style="background:var(--bg-secondary)">
+        <div class="container">
+            <p class="section-label reveal">Experience</p>
+            <h2 class="section-title reveal reveal-delay-1">Where I've Worked</h2>
+            <p class="section-subtitle reveal reveal-delay-2">Freelance and professional experience building real-world skills.</p>
+            <div class="experience-grid">
+                <div class="experience-card reveal reveal-delay-1">
+                    <h3>Freelance AI Data Trainer</h3>
+                    <span class="exp-period">2024 &mdash; Present</span>
+                    <p>Training AI models through text annotation, response evaluation, and quality assurance. Working on diverse datasets to improve model accuracy and reliability.</p>
+                    <ul>
+                        <li>Text annotation and labeling for supervised learning</li>
+                        <li>AI response evaluation and scoring</li>
+                        <li>Quality assurance and data validation</li>
+                    </ul>
+                </div>
+                <div class="experience-card reveal reveal-delay-2">
+                    <h3>Website Tester &amp; Reviewer</h3>
+                    <span class="exp-period">2024 &mdash; Present</span>
+                    <p>Identifying bugs, UI inconsistencies, and functionality issues across web applications to ensure polished user experiences.</p>
+                    <ul>
+                        <li>Bug identification and detailed reporting</li>
+                        <li>UI/UX consistency and functionality testing</li>
+                        <li>Cross-browser and responsive design verification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <p class="section-label reveal">Contact</p>
+                <h2 class="section-title reveal reveal-delay-1">Get In Touch</h2>
+                <p class="section-subtitle reveal reveal-delay-2">
+                    I'm always open to new opportunities, collaborations, or just a friendly chat.
+                    Feel free to reach out!
+                </p>
+                <div class="contact-links reveal reveal-delay-3">
+                    <a href="mailto:awadithyan@gmail.com" class="contact-link">
+                        <span class="icon">&#128231;</span> awadithyan@gmail.com
+                    </a>
+                    <a href="tel:+919061143591" class="contact-link">
+                        <span class="icon">&#128222;</span> +91 90611 43591
+                    </a>
+                    <a href="https://github.com/Devadi321" target="_blank" class="contact-link">
+                        <span class="icon">&#128056;</span> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/adithya-krishnankl" target="_blank" class="contact-link">
+                        <span class="icon">&#128279;</span> LinkedIn
+                    </a>
+                </div>
+                <p class="contact-email reveal reveal-delay-4">
+                    Or drop a line: <a href="mailto:awadithyan@gmail.com">awadithyan@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Built with <span>&#10084;</span> by Adithya Krishnan K L &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Section Visibility Toggle (Tab-Style) =====
+        var sectionData = [
+            { id: 'about', label: 'About' },
+            { id: 'skills', label: 'Skills' },
+            { id: 'projects', label: 'Projects' },
+            { id: 'experience', label: 'Experience' },
+            { id: 'contact', label: 'Contact' }
+        ];
+
+        var toggleBar = document.createElement('div');
+        toggleBar.className = 'section-toggle-bar';
+        toggleBar.innerHTML = '<span class="toggle-label">View:</span>';
+
+        // "All" button - shows everything
+        var allBtn = document.createElement('button');
+        allBtn.className = 'toggle-btn active';
+        allBtn.textContent = 'All';
+        allBtn.addEventListener('click', function() {
+            var btns = toggleBar.querySelectorAll('.toggle-btn');
+            for (var b = 0; b < btns.length; b++) btns[b].classList.remove('active');
+            this.classList.add('active');
+            var allSections = document.querySelectorAll('.section');
+            for (var s = 0; s < allSections.length; s++) allSections[s].classList.remove('hidden');
+        });
+        toggleBar.appendChild(allBtn);
+
+        for (var i = 0; i < sectionData.length; i++) {
+            (function() {
+                var data = sectionData[i];
+                var btn = document.createElement('button');
+                btn.className = 'toggle-btn';
+                btn.textContent = data.label;
+                btn.addEventListener('click', function() {
+                    var btns = toggleBar.querySelectorAll('.toggle-btn');
+                    for (var b = 0; b < btns.length; b++) btns[b].classList.remove('active');
+                    this.classList.add('active');
+                    var allSections = document.querySelectorAll('.section');
+                    for (var s = 0; s < allSections.length; s++) allSections[s].classList.add('hidden');
+                    var target = document.getElementById(data.id);
+                    if (target) {
+                        target.classList.remove('hidden');
+                        var rect = target.getBoundingClientRect();
+                        var isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+                        if (!isInView) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+                toggleBar.appendChild(btn);
+            })();
+        }
+
+        var hero = document.getElementById('home');
+        if (hero && hero.parentNode) {
+            hero.parentNode.insertBefore(toggleBar, hero.nextSibling);
+        }
+
+        // ===== Hamburger Menu =====
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        function closeMenu() {
+            if (hamburger && navLinks) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        }
+
+        // ===== Navbar Scroll Effect =====
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (navbar) {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            }
+        });
+
+        // ===== Scroll Reveal Animations =====
+        var revealElements = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            var revealObserver = new IntersectionObserver(
+                function(entries) {
+                    for (var e = 0; e < entries.length; e++) {
+                        if (entries[e].isIntersecting) {
+                            entries[e].target.classList.add('visible');
+                            revealObserver.unobserve(entries[e].target);
+                        }
+                    }
+                },
+                { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+            );
+            for (var r = 0; r < revealElements.length; r++) {
+                revealObserver.observe(revealElements[r]);
+            }
+        } else {
+            for (var r = 0; r < revealElements.length; r++) {
+                revealElements[r].classList.add('visible');
+            }
+        }
+
+        // ===== Highlight Active Nav Link =====
+        var navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+        var sectionIds = [];
+        for (var s = 0; s < sectionData.length; s++) sectionIds.push(sectionData[s].id);
+        window.addEventListener('scroll', function() {
+            var current = '';
+            for (var si = 0; si < sectionIds.length; si++) {
+                var section = document.getElementById(sectionIds[si]);
+                if (section) {
+                    var rect = section.getBoundingClientRect();
+                    if (rect.top <= 150) {
+                        current = sectionIds[si];
+                    }
+                }
+            }
+            for (var a = 0; a < navAnchors.length; a++) {
+                var href = navAnchors[a].getAttribute('href');
+                if (href === '#' + current) {
+                    navAnchors[a].style.color = 'var(--accent)';
+                } else {
+                    navAnchors[a].style.color = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
